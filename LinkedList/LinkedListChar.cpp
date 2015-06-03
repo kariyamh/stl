@@ -5,9 +5,14 @@ LinkedListChar::LinkedListChar(void) : firstNode() {}
 
 LinkedListChar::LinkedListChar(const std::string& init):
 		firstNode() {
-	int len = init.length();
-	
-	//TODO
+	LinkedListChar::Node* curNode = const_cast<LinkedListChar::Node*>(&firstNode);
+	for (size_t i = 0; i < init.length(); ++i) {
+		LinkedListChar::Node* newNode = new LinkedListChar::Node;
+		newNode->curChar = init[i];
+		newNode->nextNode = 0;
+		curNode->nextNode = newNode;
+		curNode = newNode;
+	}
 }
 
 

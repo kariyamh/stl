@@ -16,10 +16,24 @@ int main() {
 	} catch (const out_of_range& e) {
 	}
 	try {
-		emptyList.getChar(1);
+		emptyList.getChar(0);
 		cout << "Error: Test 3" << std::endl;
 	} catch (const out_of_range& e) {
 	}
 	emptyList = LinkedListChar("");
-	std::cout << "Hello, World!" << std::endl;
+	if (emptyList.size() != 0) {
+		cout << "ERROR: Test 4" << std::endl;
+	}
+	try {
+		emptyList.getChar(-1);
+		cout << "Error: Test 5" << std::endl;
+	} catch (const out_of_range& e) {
+	}
+	try {
+		emptyList.getChar(0);
+		cout << "Error: Test 6" << std::endl;
+	} catch (const out_of_range& e) {
+	}
+	
+	std::cout << "Test Complete" << std::endl;
 }
